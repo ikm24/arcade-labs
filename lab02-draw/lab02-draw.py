@@ -13,13 +13,12 @@ arcade.set_background_color(arcade.color.ATOMIC_TANGERINE)
 #Comienzo para dibujar
 arcade.start_render()
 
-#Nubes (?)
 
-arcade.draw_texture_rectangle(600,500,800,200,arcade.texture.Texture)
-arcade.draw_texture_rectangle()
 
 #Montaña
 arcade.draw_triangle_filled(300,100,600,700,900,100,arcade.color.COOL_GREY)
+arcade.draw_triangle_filled(550,600,600,700,650,600,arcade.color.WHITE)
+
 
 
 #Acabar dibujo
