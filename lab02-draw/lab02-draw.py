@@ -18,6 +18,9 @@ arcade.start_render()
 #Cielo
 arcade.draw_rectangle_filled(600,500,1200,800,arcade.color.BABY_BLUE)
 
+#Sol
+arcade.draw_circle_filled(1000,680,100,arcade.color.ICTERINE)
+
 #Montaña centro
 arcade.draw_triangle_filled(100,200,400,800,700,200,arcade.color.AUROMETALSAURUS)
 arcade.draw_triangle_filled(350,700,400,800,450,700,arcade.color.WHITE_SMOKE)
