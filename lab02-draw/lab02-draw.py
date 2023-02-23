@@ -8,15 +8,11 @@ import arcade
 arcade.open_window(1200,800,"Mi precioso dibujo")
 
 #Fondo (forma el lago)
-arcade.set_background_color(arcade.color.BLEU_DE_FRANCE)
-
+arcade.set_background_color(arcade.color.BABY_BLUE)
 
 
 #Comienzo para dibujar
 arcade.start_render()
-
-#Cielo
-arcade.draw_rectangle_filled(600,500,1200,800,arcade.color.BABY_BLUE)
 
 #Sol
 arcade.draw_circle_filled(1000,680,100,arcade.color.ICTERINE)
@@ -30,6 +26,9 @@ arcade.draw_triangle_filled(550,600,600,700,650,600,arcade.color.GHOST_WHITE)
 #Montaña izquierda
 arcade.draw_triangle_filled(-100,100,200,700,500,100,arcade.color.ASH_GREY)
 arcade.draw_triangle_filled(150,600,200,700,250,600,arcade.color.GHOST_WHITE)
+
+#Lago
+arcade.draw_rectangle_filled(600,200,1200,200,arcade.color.BLEU_DE_FRANCE)
 
 #Cosa verde
 arcade.draw_circle_filled(1400,-500,1000,arcade.color.DOLLAR_BILL)
