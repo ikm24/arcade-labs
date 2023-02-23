@@ -5,7 +5,7 @@ Dibujo lab usando funciones
 import arcade
 
 #Declaracion de funciones
-def arbol(x,y,e=1):
+def arbol(x,y):
     '''int, int, int  --> nada
     OBJ: crea un arbol con la base del tronco en las cordenadas x e y,
     de tamaño en relacion con el escalar e'''
@@ -67,7 +67,7 @@ arcade.draw_rectangle_filled(600,375,800,1,arcade.color.ALABAMA_CRIMSON)
 arcade.draw_rectangle_filled(600,350,800,1,arcade.color.ALABAMA_CRIMSON)
 arcade.draw_rectangle_filled(600,325,800,1,arcade.color.ALABAMA_CRIMSON)
 
-arcade.draw_triangle_filled(700,250,725,300,750,250,arcade.color.AO)
+
 
 '''
 arbol(800,400)
