@@ -51,7 +51,7 @@ def main():
         answer = input(print("Que desea hacer: "))
         if (answer in NORTE):
             try:
-                next_room=(room_list[current_room].noth)
+                next_room=(room_list[current_room].north)
             except:
                 print("Te estampas contra la pared, pensando el por qué de tus acciones\n")
         elif (answer in SUR):
