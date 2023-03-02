@@ -48,25 +48,25 @@ def main():
 
     while (done==False):
         print(room_list[current_room].description)
-        answer = input(print("Que desea hacer: "))
+        answer = input("Que desea hacer: ")
         if (answer in NORTE):
             try:
-                next_room=(room_list[current_room].north)
+                current_room=(room_list[current_room].north)
             except:
                 print("Te estampas contra la pared, pensando el por qué de tus acciones\n")
         elif (answer in SUR):
             try:
-                next_room = (room_list[current_room].south)
+                current_room = (room_list[current_room].south)
             except:
                 print("Te estampas contra la pared, pensando el por qué de tus acciones\n")
         elif (answer in ESTE):
             try:
-                next_room = (room_list[current_room].east)
+                current_room = (room_list[current_room].east)
             except:
                 print("Te estampas contra la pared, pensando el por qué de tus acciones\n")
         elif (answer in OESTE):
             try:
-                next_room = (room_list[current_room].west)
+                current_room = (room_list[current_room].west)
             except:
                 print("Te estampas contra la pared, pensando el por qué de tus acciones\n")
         elif (answer in QUIT):
