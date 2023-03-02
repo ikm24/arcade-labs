@@ -13,6 +13,11 @@ class Room:
         self.west = west
 
 def main():
+    NORTE=["n","N","north","NORTH","North","norte","NORTE","Norte"]
+    SUR=["s","S","south","South","SOUTH","Sur","sur","SUR"]
+    ESTE=["e","E","east","East","EAST","Este","este","ESTE"]
+    OESTE=["w","W","o","O","west","West","WEST","Oeste","OESTE","oeste"]
+
     room_list = []
     lobby = Room(
         "Te despiertas en lo que parece la entrada de una casa. No sabes como has llegado alli y te sientes algo " +
@@ -39,7 +44,11 @@ def main():
     current_room = 0
     done = False
 
+
     while (done==False):
         print(room_list[current_room].description)
+        print("\n")
+        input(print("Que desea hacer: "))
+        print("\n")
 
 main()
