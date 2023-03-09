@@ -60,11 +60,11 @@ class MyGame(arcade.Window):
 
         self.ball = Ball(50,50,0,0,15,arcade.color.FLORAL_WHITE)
 
-        self.tree4 = Tree(685, 145)
         self.tree1 = Tree(750,200)
         self.tree2 = Tree(750,75)
         self.tree3 = Tree(625,50)
-        self.tree5 = Tree(700,40)
+        self.tree4 = Tree(685, 145)
+        self.tree5 = Tree(700,35)
 
 
     def on_draw(self):
@@ -87,6 +87,8 @@ class MyGame(arcade.Window):
         # Lago
         arcade.draw_rectangle_filled(600, 100, 1200, 300, arcade.color.BLEU_DE_FRANCE)
 
+        self.ball.draw()
+
         # Cosa verde
         arcade.draw_circle_filled(1400, -500, 1000, arcade.color.DOLLAR_BILL)
 
@@ -96,7 +98,6 @@ class MyGame(arcade.Window):
         self.tree4.draw()
         self.tree5.draw()
 
-        self.ball.draw()
 
     def update(self, delta_time):
         self.ball.update()
