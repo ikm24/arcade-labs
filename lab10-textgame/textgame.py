@@ -48,7 +48,7 @@ def main():
 
     while (done==False):
         print(room_list[current_room].description)
-        answer = input("Que desea hacer: ")
+        answer = input("Que desea hacer? ")
         if (answer in NORTE):
             try:
                 current_room=(room_list[current_room].north)
