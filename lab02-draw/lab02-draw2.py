@@ -5,13 +5,13 @@ Dibujo lab usando funciones
 import arcade
 
 #Declaracion de funciones
-def arbol(x,y,e=0):
+def arbol(x,y,):
     '''int, int, int  --> nada
     OBJ: crea un arbol con la base del tronco en las cordenadas x e y'''
     arcade.draw_rectangle_filled(x, y+25, 10, 50, arcade.color.DONKEY_BROWN)
-    arcade.draw_triangle_filled(x-25-(8*e), y+75-(6*e), x, y+125+(10*e), x+25+(8*e), y+75-(6*e), arcade.color.AO)
-    arcade.draw_triangle_filled(x-25-(8*e), y+50-(6*e), x, y+100+(10*e), x+25+(8*e), y+50-(6*e), arcade.color.AO)
-    arcade.draw_triangle_filled(x-25-(8*e), y+25-(6*e), x, y+75+(10*e), x+25+(8*e), y+25-(6*e), arcade.color.AO)
+    arcade.draw_triangle_filled(x-25, y+75, x, y+125, x+25, y+75, arcade.color.AO)
+    arcade.draw_triangle_filled(x-25, y+50, x, y+100, x+25, y+50, arcade.color.AO)
+    arcade.draw_triangle_filled(x-25, y+25, x, y+75, x+25, y+25, arcade.color.AO)
 
 #Plantilla de dibujo
 arcade.open_window(1200,800,"Mi precioso dibujo")
