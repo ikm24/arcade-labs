@@ -138,6 +138,8 @@ class MyGame(arcade.Window):
 
         for ghost in ghost_hit_list:
             arcade.play_sound(self.damage_sound,DAMAGE_VOLUME)
+            ghost.center_x = random.randrange(SCREEN_WIDTH)
+            ghost.center_y = random.randrange(SCREEN_HEIGHT)
             self.lives -=1
 
 
