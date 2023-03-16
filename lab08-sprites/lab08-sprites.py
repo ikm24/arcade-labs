@@ -54,8 +54,8 @@ class MyGame(arcade.Window):
         self.ghost_list = arcade.SpriteList()
 
         # Sounds
-        self.coin_sound = arcade.load_sound("Mario_coin.wav", False)
-        self.damage_sound = arcade.load_sound("Mario_oof.wav",False)
+        self.coin_sound = arcade.load_sound("C:/Tecnologia de Videojuegos/arcade-labs/LOCAL_SOUNDS/Mario_coin.wav", False)
+        self.damage_sound = arcade.load_sound("C:/Tecnologia de Videojuegos/arcade-labs/LOCAL_SOUNDS/Mario_oof.wav",False)
 
         # Score
         self.score = 0
@@ -65,7 +65,7 @@ class MyGame(arcade.Window):
 
         # Set up the player
         # Character image from kenney.nl
-        self.player_sprite = arcade.Sprite("Mario_head.png", SPRITE_SCALING_PLAYER)
+        self.player_sprite = arcade.Sprite("C:/Tecnologia de Videojuegos/arcade-labs/LOCAL_IMAGES/Mario_head.png", SPRITE_SCALING_PLAYER)
         self.player_sprite.center_x = 50
         self.player_sprite.center_y = 50
         self.player_list.append(self.player_sprite)
@@ -74,7 +74,7 @@ class MyGame(arcade.Window):
         for i in range(COIN_COUNT):
             # Create the coin instance
 
-            coin = arcade.Sprite("Mario_coin.png", SPRITE_SCALING_COIN)
+            coin = arcade.Sprite("C:/Tecnologia de Videojuegos/arcade-labs/LOCAL_IMAGES/Mario_coin.png", SPRITE_SCALING_COIN)
 
             # Position the coin
             coin.center_x = random.randrange(SCREEN_WIDTH)
@@ -87,11 +87,13 @@ class MyGame(arcade.Window):
         for i in range(GHOST_COUNT):
             # Create the ghost instance
 
-            ghost = arcade.Sprite("Mario_ghost.png", SPRITE_SCALING_GHOST)
+            ghost = arcade.Sprite("C:/Tecnologia de Videojuegos/arcade-labs/LOCAL_IMAGES/Mario_ghost.png", SPRITE_SCALING_GHOST)
 
             # Position the ghost
             ghost.center_x = random.randrange(SCREEN_WIDTH)
             ghost.center_y = random.randrange(SCREEN_HEIGHT)
+            ghost.change_x = MOVEMENT_SPEED
+            ghost.change_y = 0
 
             # Add the ghost to the lists
             self.ghost_list.append(ghost)
