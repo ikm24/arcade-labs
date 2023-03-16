@@ -4,9 +4,11 @@ import arcade
 import random
 
 # --- Constants ---
-SPRITE_SCALING_PLAYER = 0.5
-SPRITE_SCALING_COIN = 0.2
+SPRITE_SCALING_PLAYER = 0.1
+SPRITE_SCALING_COIN = 0.05
 COIN_COUNT = 50
+COIN_VOLUME = 1.0
+MOVEMENT_SPEED = 3
 
 SCREEN_WIDTH = 800
 SCREEN_HEIGHT = 600
@@ -26,12 +28,15 @@ class MyGame(arcade.Window):
         # Variables that will hold sprite lists.
         self.player_list = None
         self.coin_list = None
+        self.ghost_list = None
 
         # Set up the player info
         self.player_sprite = None
         self.score = 0
 
-        arcade.set_background_color(arcade.color.BISQUE)
+
+
+        arcade.set_background_color(arcade.color.CERULEAN_BLUE)
 
     def setup(self):
         """ Set up the game and initialize the variables. """
@@ -39,13 +44,17 @@ class MyGame(arcade.Window):
         # Sprite lists
         self.player_list = arcade.SpriteList()
         self.coin_list = arcade.SpriteList()
+        self.ghost_list = arcade.SpriteList()
+
+        # Sounds
+        self.coin_sound = arcade.load_sound("C:\Tecnologia de Videojuegos\LOCAL_SOUNDS\Mario_coin.wav", False)
 
         # Score
         self.score = 0
 
         # Set up the player
         # Character image from kenney.nl
-        self.player_sprite = arcade.Sprite("Isaac_Player.png", SPRITE_SCALING_PLAYER)
+        self.player_sprite = arcade.Sprite("C:\Tecnologia de Videojuegos\LOCAL_IMAGES\Mario_head.png", SPRITE_SCALING_PLAYER)
         self.player_sprite.center_x = 50
         self.player_sprite.center_y = 50
         self.player_list.append(self.player_sprite)
@@ -54,7 +63,7 @@ class MyGame(arcade.Window):
         for i in range(COIN_COUNT):
             # Create the coin instance
             # Coin image from kenney.nl
-            coin = arcade.Sprite("Isaac_Coin.png", SPRITE_SCALING_COIN)
+            coin = arcade.Sprite("C:\Tecnologia de Videojuegos\LOCAL_IMAGES\Mario_coin.png", SPRITE_SCALING_COIN)
 
             # Position the coin
             coin.center_x = random.randrange(SCREEN_WIDTH)
@@ -71,7 +80,7 @@ class MyGame(arcade.Window):
 
         # Put the text on the screen.
         output = f"Score: {self.score}"
-        arcade.draw_text(output, 10, 20, arcade.color.BLACK, 14)
+        arcade.draw_text(output, 10, 20, arcade.color.WHITE, 14)
 
     def on_mouse_motion(self, x, y, dx, dy):
         """ Handle Mouse Motion """
@@ -94,6 +103,7 @@ class MyGame(arcade.Window):
         # Loop through each colliding sprite, remove it, and add to the score.
         for coin in coins_hit_list:
             coin.remove_from_sprite_lists()
+            arcade.play_sound(self.coin_sound,COIN_VOLUME)
             self.score += 1
 
 
